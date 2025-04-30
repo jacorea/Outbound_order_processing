@@ -4,7 +4,7 @@ from io import StringIO
 
 def process_csv(file):
     # Read the CSV file
-    df = pd.read_csv(file)
+    df = pd.read_csv(file, encoding='utf-8-sig')
     
     # Convert Planned Shipped Date from yyyymmdd to mm/dd/yyyy
     df['Planned Ship Date'] = pd.to_datetime(df['Planned Ship Date'], format='%Y%m%d').dt.strftime('%m/%d/%Y')
